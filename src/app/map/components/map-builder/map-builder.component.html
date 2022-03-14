@@ -1,0 +1,8 @@
+<div #mapElem id="map" pbMapDir></div>
+<app-overlay [overlayData]="overlayData" 
+(highlightFeatureOnSwipe)="higlightFeatureonMap($event)"
+(overlayFooterClick)="loadBookingForm($event)"
+*ngIf="overlayData?.selectedFeatureProps">
+</app-overlay>
+<div *ngIf="isBookingAllowed" lazyLoad [hotelDetails]="hotelDetails" [moduleName]="'Hotel'" >
+</div>

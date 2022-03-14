@@ -1,0 +1,92 @@
+/* You can add global styles to this file, and also import other style files */
+/* Text boxes in default state */
+input[type=text], input[type=email], input[type=date] {    
+    border-radius: 4px;
+    height: 20px;
+    box-sizing: border-box;
+  }
+
+  input[type=text]:not(.error), input[type=email]:not(.error) {
+    border: 1px solid #ccc;
+  }
+  /* Form labels and inputs in default state */
+  .form-group {
+      display: flex;
+      flex-wrap: wrap;
+      padding-left: 10px;
+  }
+
+  .form-group label {
+    flex: 0 0 30%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 30%;
+    max-width: 30%;
+  }
+
+  .form-group label.required:after {
+    content:" *";
+    color: red;
+  }
+
+  /* Styling for primary button*/
+  .primaryButton {  
+    height: 2.5em;    
+    background-color: #ffa500;
+    color: #ffffff;
+    border: transparent;
+    cursor: pointer;
+  }
+ /* Styling for seconday button */
+  .secondaryButton {  
+    height: 2.5em;    
+    color: #fff;
+    background-color: #6c757d;
+    border-color: transparent;
+    cursor: pointer;
+  }
+  /* Styling to specify state */
+  button:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+  }
+  
+ .emphasize-font {
+    font-size: 16px;
+    font-weight: bold;
+}
+/* End of state specific styling */
+
+/* Default margins */
+.default-margin-l{
+    margin-left: 10px;
+}
+.default-margin-t {
+    margin-top: 10px;
+}
+.no-margin {
+    margin: 0;
+}
+/* End of margin styling */
+
+/* Styling for error scenarios */
+.error {
+    border: 1px solid red;    
+}
+.error-msg {
+    color: red;
+}
+/* Ovverride open layer css */
+.ol-zoom {
+    position: fixed;
+    bottom: 10px;
+}
+.ol-rotate, .ol-attribution {
+    display: none;
+}
+.ol-overlaycontainer-stopevent {
+    z-index: 1000 !important;
+}
+/* End of overriding open layer css */
+
+

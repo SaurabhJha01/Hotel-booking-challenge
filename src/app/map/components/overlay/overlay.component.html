@@ -1,0 +1,16 @@
+<div #overlayContainer id="popup" class="ol-popup">
+  <!-- Show the selected plotted point details-->
+  <section class="slider" id="selected-popup-content" mobileSwipe 
+   [slidesCount]="overlayData?.features?.length" (swipeEnd)="swipEnd($event)">
+    <app-feature-info [featureInfo]="overlayData?.selectedFeatureProps" (footerBtnEmit)="overlayEmit(overlayData?.selectedFeatureProps)"></app-feature-info>
+  </section>
+
+  <!-- Rest of the plotted point details waiting to be slide in -->
+  <ng-container *ngIf="isMobile">
+    <section class="slider" id="popup-content-{{i}}" mobileSwipe [slidesCount]="overlayData?.features?.length"
+      *ngFor="let feature of overlayData.features;" (swipeEnd)="swipEnd($event)">
+      <app-feature-info [featureInfo]="feature?.properties" (footerBtnEmit)="overlayEmit(feature?.properties)"></app-feature-info>
+    </section>
+  </ng-container>  
+</div>
+

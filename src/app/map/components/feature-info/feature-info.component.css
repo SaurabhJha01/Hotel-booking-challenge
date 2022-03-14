@@ -1,0 +1,41 @@
+.hotel-intro{
+    display: flex;
+  }
+  .imageContainer {
+    width: 50%;
+    flex-basis: fit-content;
+  }
+  img {
+    max-width: 100%;
+ }
+ .distance {
+  font-size: 14px;
+  color: darkgrey; 
+ }
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  
+}
+
+@media (min-width: 300px) {  
+  footer {
+    width: 400px;
+   }
+   footer > button {
+      width: 70%;
+   }
+}
+
+@media (min-width: 767px) {  
+  footer {
+   width: 100%;
+   }
+   footer > button {     
+     width: 90%;
+   }
+}
+
+
+

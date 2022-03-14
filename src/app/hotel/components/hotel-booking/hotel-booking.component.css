@@ -1,0 +1,62 @@
+/** Styles for booking form container */
+form {
+    position: absolute;
+    top: 52px;
+    right: 0px;
+    z-index: 1000;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;     
+}
+
+/** Responsive width style for booking form */
+ @media (min-width: 300px) {  
+    form {       
+        width: 100vw;
+    }
+  }
+  @media (min-width: 767px) {  
+    form {
+        width: 25vw;
+    }
+  }
+/**End of responsive width style for booking form*/
+
+/** on click of label focus shifts to its corresponding text box. Hence set cursor on label to pointer*/
+  label {
+      cursor: pointer;
+  }
+
+  /** Styles for footer*/
+  footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    border-top: 1px solid grey;
+  }
+
+  footer > button {
+      width: 40%;
+      margin-top: 10px
+  }
+/**End of footer styles*/
+
+ /** Alignment styles*/
+.control-margin {
+    margin-left: 15px;
+  }  
+ 
+  #nameId, #checkinDateId, #checkoutDateId {
+      margin-top: 15px;
+  }
+  #nameId label.required:after, #emailId label.required:after {
+    margin-left: 18px;
+  }
+  #mobileId label.required:after {
+    margin-left: 12px;
+  }
+  #checkinDateId label.required:after {
+    margin-left: 7px;
+  }
+   /**End of Alignment styles*/

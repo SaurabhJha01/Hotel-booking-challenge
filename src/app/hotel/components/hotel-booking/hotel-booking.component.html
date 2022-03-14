@@ -1,0 +1,66 @@
+<form [formGroup]="bookingForm" (ngSubmit)="onSubmit()"> ​
+    <!-- Read only hotel title input ​ -->
+    <div id="titleId" class="form-group">
+        <label>Title:</label>
+        <input id="title" type="text" class="form-control control-margin" formControlName="hotelTitle" />        
+    </div>
+     <!-- Customer name input ​ -->
+    <div id="nameId" class="form-group">
+        <label for="nameTxt" class="required">Name:</label>
+        <input id="nameTxt" type="text" [ngClass]="{error: bookingForm.get('name').invalid && bookingForm.get('name').touched}"
+            class="form-control control-margin" formControlName="name" />
+        <div *ngIf="bookingForm.get('name').invalid && bookingForm.get('name').touched">
+            <small class="error-msg" *ngIf="bookingForm.get('name').errors?.required">Name is required</small>
+        </div>
+    </div>
+    ​<!-- Customer email Id input ​ -->
+    <div id="emailId" class="form-group">
+        <label for="emailTxt" class="required">Email:</label>
+        <input id="emailTxt" type="email" [ngClass]="{error: bookingForm.get('email').invalid && bookingForm.get('email').touched}"
+            class="form-control control-margin" formControlName="email" />
+        <div *ngIf="bookingForm.get('email').invalid && bookingForm.get('email').touched">
+            <small class="error-msg" *ngIf="bookingForm.get('email').errors?.required">Email address is
+                required</small>
+            <small class="error-msg" *ngIf="bookingForm.get('email').errors?.email">Email address is invalid</small>
+        </div>
+    </div> ​
+    ​<!-- Customer mobile input ​ -->
+    <div id="mobileId" class="form-group">
+        <label for="mobileTxt" class="required">Mobile:</label>
+        <input for="mobileTxt" type="text" [ngClass]="{error: bookingForm.get('mobile').invalid && bookingForm.get('mobile').touched}"
+            class="form-control control-margin" formControlName="mobile" />
+        <div *ngIf="bookingForm.get('mobile').invalid && bookingForm.get('mobile').touched">
+            <small class="error-msg" *ngIf="bookingForm.get('mobile').errors?.required">mobile is required</small>
+        </div> 
+        <div *ngIf="bookingForm.get('mobile').invalid && bookingForm.get('mobile').touched">
+            <small class="error-msg" *ngIf="bookingForm.get('mobile').errors?.pattern">invalid mobile number</small>
+        </div>
+    </div>
+   ​<!-- Check-in date input ​ -->
+    <div id="checkinDateId" class="form-group">
+        <label class="required">Checkin:</label>
+        <input id="checkInId" type="date" class="form-control control-margin" formControlName="checkinDate" />  
+        <div *ngIf="bookingForm.get('checkinDate').invalid && bookingForm.get('checkinDate').touched">
+            <small class="error-msg" *ngIf="bookingForm.get('checkinDate').errors?.checkinNotValidError">Checkin date cannot be after the checkout date</small>
+        </div>       
+    </div>
+    ​<!-- Checkot-out date input ​ -->
+    <div id="checkoutDateId" class="form-group ">
+        <label class="required">Checkout:</label>
+        <input id="checkOutId" type="date" class="form-control control-margin" formControlName="checkoutDate"/> 
+        <div *ngIf="bookingForm.get('checkoutDate').invalid && bookingForm.get('checkoutDate').touched">
+            <small class="error-msg" *ngIf="bookingForm.get('checkoutDate').errors?.checkoutNotValidError">Checkout date cannot be before the check in date</small>
+        </div>       
+    </div>
+
+    <footer>
+        ​<!-- Submit the form​ -->
+        <button class="primaryButton" type="submit" [disabled]="!bookingForm.valid">
+            Submit
+          </button>
+          ​<!-- Cancel the form​ -->
+          <button class="secondaryButton" type="button" (click)="onCancel()">
+            Cancel
+          </button>
+    </footer>
+</form>

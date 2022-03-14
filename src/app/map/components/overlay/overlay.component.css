@@ -1,0 +1,33 @@
+/** Stlyes for overlay container */
+.ol-popup {
+  min-width: 280px;
+  display: flex;
+  overflow: hidden;
+  height: 25vh;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;   
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #cccccc;
+  position: absolute;
+  bottom: 12px;
+  left: -50px; 
+}
+ /** Styles for the slides on the mobile*/
+ .slider {
+    width: 300px;
+    user-select: none;
+    margin-left: 10px;
+  }
+ /** Inrease the height of ht eoverlay on desktop devices**/
+  @media (min-width: 768px) {  
+    .ol-popup {
+      height: 27vh;
+     }
+ }
+
+
+  
+
